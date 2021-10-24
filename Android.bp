@@ -44,12 +44,18 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.java",
+           "BlazeHouse/src/**/*.java",
+    ],
     resource_dirs: [
         "res",
         "res-pixel",
-        "TouchGestures/res"
+        "TouchGestures/res",
+        "BlazeHouse/res",
     ],
+
+    aaptflags: ["--extra-packages com.blaze.house"],
+
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
@@ -82,6 +88,7 @@ android_library {
         "SettingsGoogle-lib",
         "vendor.lineage.fastcharge-V1.0-java",
         "faceunlock_framework",
+        "kotlin-stdlib",
     ],
     manifest: "AndroidManifest.xml",
     additional_manifests: ["SettingsGoogle-Manifest.xml"],
@@ -91,6 +98,7 @@ android_library {
         "ims-common",
         "app-compat-annotations",
     ],
+
 }
 
 platform_compat_config {
